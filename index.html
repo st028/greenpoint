@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenPoint - เข้าสู่ระบบ</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #e0f7e9; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh; }
+    .container { background: #fff; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 100%; max-width: 400px; }
+    h2 { text-align: center; color: #2e7d32; }
+    input[type="text"], input[type="email"], input[type="password"], input[type="date"], select { width: 100%; padding: 0.8rem; margin: 0.5rem 0; border: 1px solid #ccc; border-radius: 5px; }
+    button { width: 100%; padding: 0.8rem; background-color: #2e7d32; color: white; border: none; border-radius: 5px; font-size: 1rem; cursor: pointer; margin-top: 1rem; }
+    button:hover { background-color: #276528; }
+    .link { text-align: center; margin-top: 1rem; }
+    a { color: #2e7d32; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<div class="container" id="loginPage">
+  <h2>เข้าสู่ระบบ</h2>
+  <form>
+    <input type="email" placeholder="อีเมล" required>
+    <input type="password" placeholder="รหัสผ่าน" required>
+    <button type="submit">เข้าสู่ระบบ</button>
+    <div class="link">
+      <p>ยังไม่ได้เป็นสมาชิก? <a href="#" onclick="showRegister()">สมัครที่นี่</a></p>
+    </div>
+  </form>
+</div>
+
+<div class="container" id="registerPage" style="display:none;">
+  <h2>สมัครสมาชิก</h2>
+  <form>
+    <input type="text" placeholder="ชื่อ-นามสกุล" required>
+    <input type="email" placeholder="อีเมล" required>
+    <input type="text" placeholder="เบอร์โทรศัพท์" required>
+    <input type="date" placeholder="วันเดือนปีเกิด" required>
+    <select required>
+      <option value="">เลือกเพศ</option>
+      <option value="ชาย">ชาย</option>
+      <option value="หญิง">หญิง</option>
+      <option value="ไม่ระบุ">ไม่ระบุ</option>
+    </select>
+    <input type="text" placeholder="ชื่อผู้ใช้ (Username)" required>
+    <input type="password" placeholder="รหัสผ่าน" required>
+    <input type="password" placeholder="ยืนยันรหัสผ่าน" required>
+    <label><input type="checkbox" required> ยอมรับเงื่อนไขการใช้งาน</label><br>
+    <label><input type="checkbox" required> ยินยอมให้เก็บข้อมูลตามนโยบายความเป็นส่วนตัว</label>
+    <button type="submit">สมัครสมาชิก</button>
+    <div class="link">
+      <p>มีบัญชีอยู่แล้ว? <a href="#" onclick="showLogin()">เข้าสู่ระบบ</a></p>
+    </div>
+  </form>
+</div>
+
+<script>
+  function showRegister() {
+    document.getElementById('loginPage').style.display = 'none';
+    document.getElementById('registerPage').style.display = 'block';
+  }
+  function showLogin() {
+    document.getElementById('loginPage').style.display = 'block';
+    document.getElementById('registerPage').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
